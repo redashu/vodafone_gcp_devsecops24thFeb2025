@@ -201,3 +201,61 @@ logging:
     apache_error:
       type: apache_error
 ```
+
+### Google Cloud security  points 
+
+<img src="sec1.png">
+
+### Gcp Project level security 
+<img src="sec2.png">
+
+
+### User and permissions in GCP 
+
+<img src="iam1.png">
+
+### Introduction to Roles 
+
+<img src="role1.png">
+
+### type of roles 
+
+<img src="role2.png">
+
+## Some important Iam command in google cloud shell
+
+### To get list of users in a project with their roles 
+
+```sh
+gcloud  projects get-iam-policy   vodafone-devsecops 
+
+bindings:
+- members:
+  - serviceAccount:service-1060572613052@compute-system.iam.gserviceaccount.com
+  role: roles/compute.serviceAgent
+- members:
+  - serviceAccount:1060572613052-compute@developer.gserviceaccount.com
+  - serviceAccount:1060572613052@cloudservices.gserviceaccount.com
+  - user:ananthakumar.test@gmail.com
+  - user:aniketkumbhar348921@gmail.com
+  - user:ashwinsawant2019@gmail.com
+  - user:ayushnaphade1012@gmail.com
+  - user:backupshivay@gmail.com
+  - user:bansalanuj28@gmail.com
+  - user:dadhengle@gmail.com
+  - user:learntechbyme@gmail.com
+  - user:nikhil.samaiya0111@gmail.com
+```
+
+### checking roles and filter out some info 
+
+```sh
+ 69  gcloud  iam  roles   list   | grep -i "name"
+   70  gcloud  iam  roles   list   | grep -i "name"  | grep -i "owner"
+```
+
+### listing permission associated with role 
+
+```sh
+ gcloud  iam  roles  describe roles/compute.admin
+```

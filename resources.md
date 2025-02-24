@@ -6,3 +6,9 @@
 
 [click_here](https://sre.google/sre-book/practical-alerting/)
 
+### Google cloud docs for cloud ops agent with logs and metrics config
+
+[click_here](https://cloud.google.com/monitoring/agent/ops-agent/third-party/mariadb)
+
+
+
