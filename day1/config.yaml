@@ -1,0 +1,39 @@
+logging:
+  service:
+    pipelines:
+      mysql:
+        receivers:
+          - mysql_error
+          - mysql_slowquery
+          - mysql_general
+      apache:
+        receivers:
+          - apache_access
+          - apache_error
+  receivers:
+    mysql_error:
+      type: mysql_error
+    mysql_slowquery:
+      type: mysql_slowquery
+    mysql_general:
+      type: mysql_general
+    apache_access:
+      type: apache_access
+    apache_error:
+      type: apache_error
+
+
+metrics:
+  receivers:
+    mysql:
+      type: mysql
+    apache:
+      type: apache
+  service:
+    pipelines:
+      mysql:
+        receivers:
+          - mysql
+      apache:
+        receivers:
+          - apache

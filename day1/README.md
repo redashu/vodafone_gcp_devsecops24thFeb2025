@@ -183,3 +183,21 @@ config.yaml
 root@gcp-common-vm:/etc/google-cloud-ops-agent# 
 
 ```
+
+### config.yaml -- to capture apache logs info 
+
+```sh
+cat  config.yaml
+logging:
+  service:
+    pipelines:
+      apache:
+        receivers:
+        - apache_access
+        - apache_error
+  receivers:
+    apache_access:
+      type: apache_access
+    apache_error:
+      type: apache_error
+```
