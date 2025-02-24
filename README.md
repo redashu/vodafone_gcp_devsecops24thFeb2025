@@ -4,3 +4,7 @@
 
 <img src="time.png">
 
+## Lab Environment 
+
+<img src="lab1.png">
+
