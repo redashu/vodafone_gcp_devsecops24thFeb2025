@@ -236,5 +236,5 @@ learntechbyme@cloudshell:~$
 
 ### default apache2 image demo 
 
-<img src="demo11.png">
+<img src="demo2.png">
 
