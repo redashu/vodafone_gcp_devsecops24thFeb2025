@@ -10,5 +10,9 @@
 
 [click_here](https://cloud.google.com/monitoring/agent/ops-agent/third-party/mariadb)
 
+### subnet calculator 
+
+[click_here](https://mxtoolbox.com/subnetcalculator.aspx)
+
 
 
