@@ -215,3 +215,26 @@ Hello all , welcome to python..!!
 Welcome to Vodafone ..
 
 ```
+
+### checking container resources consumption 
+
+```
+docker  stats ashuc1 
+
+```
+### stopping container manually 
+
+```
+ docker  stop  ashuc1
+
+ashuc1
+learntechbyme@cloudshell:~$ docker  ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+learntechbyme@cloudshell:~$ 
+
+```
+
+### default apache2 image demo 
+
+<img src="demo11.png">
+
