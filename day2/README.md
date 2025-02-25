@@ -192,4 +192,26 @@ learntechbyme@cloudshell:~$ docker  build  -t   ashupython:codev1  .
  => => resolve docker.io/library/python:latest@sha256:c32
 
  ```
- 
+
+ ### creating contaienr , list , check logs 
+
+ ```
+ learntechbyme@cloudshell:~$ docker  run  --name  ashuc1  -itd  ashupython:codev1 
+
+f9684afa8d71750a0fedec1c45f62648f54280c18693bc5f13086d0aceca7c76
+
+learntechbyme@cloudshell:~$ docker  ps
+CONTAINER ID   IMAGE               COMMAND                  CREATED         STATUS         PORTS     NAMES
+f9684afa8d71   ashupython:codev1   "python /ashucode/as…"   4 seconds ago   Up 3 seconds             ashuc1
+
+learntechbyme@cloudshell:~$ 
+learntechbyme@cloudshell:~$ 
+learntechbyme@cloudshell:~$ docker logs  ashuc1
+Hello all , welcome to python..!!
+Welcome to Vodafone ..
+Welcome to Containers ..!!
+______________________
+Hello all , welcome to python..!!
+Welcome to Vodafone ..
+
+```
