@@ -1,0 +1,11 @@
+options:
+  logging: CLOUD_LOGGING_ONLY
+steps:
+# building docker image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'ashuimage:v1', '.']
+  # runing basic script in ubuntu machine 
+  - name: ubuntu
+    args:
+      - echo
+      - hello world

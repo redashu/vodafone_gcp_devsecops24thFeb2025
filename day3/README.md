@@ -173,3 +173,39 @@ To github.com:redashu/ashu-vodafone-webapp.git
    cbb46db..b4bffea  master -> master
 
 ```
+
+## CLoud Build as CICD tool in GCP env
+
+<img src="cb.png">
+
+### Code build in gcp -- relation with service account 
+
+<img src="svc1.png">
+
+### Storing Container Build Images to Container Registry
+
+This section explains how to store container build images in a registry that provides persistent storage, secure management, and the ability to share and deploy your source.
+
+![Container Registry](reg1.png)
+
+## Container images deployment options in market 
+
+<img src="k8s1.png">
+
+### Problem statement of deploying container in Prod 
+
+<img src="k8s2.png">
+
+## Due to arch desing k8s can handle container deployment in automated way
+
+<img src="k8s3.png">
+
+### options to connect k8s 
+
+<img src="k8s4.png">
+
+
+### final why K8s on cloud 
+
+<img src="k8s5.png">
+
