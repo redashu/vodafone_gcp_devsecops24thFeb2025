@@ -14,5 +14,9 @@
 
 [click_here](https://mxtoolbox.com/subnetcalculator.aspx)
 
+### Network info blog
+
+[click_here](https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html)
+
 
 
