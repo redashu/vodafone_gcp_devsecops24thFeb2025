@@ -77,3 +77,99 @@ c468918db995   sohail:apachev1       "httpd-foreground"   2 minutes ago    Up 2 
 ### Updataing app code 
 
 <img src="update.png">
+
+## CI process 
+
+<img src="ci1.png">
+
+### More detail info about CI process and Trigger as well
+
+<img src="ci2.png">
+
+### info about Github Repo 
+
+<img src="repo1.png">
+
+### secure auth in github repo and code system 
+
+<img src="repo2.png">
+
+### generating ssh-keys for secure communication to github repo 
+
+```
+ssh-keygen 
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/learntechbyme/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/learntechbyme/.ssh/id_rsa
+Your public key has been saved in /home/learntechbyme/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:NpHGY0n2NbfDObxgOw9hypJGRNVhYAn98hTH6dHUzlE learntechbyme@gcp-common-vm
+The key's randomart image is:
++---[RSA 3072]----+
+|       .*+++=o.+E|
+|       = =ooo==+o|
+|        X ..=+B+.|
+
+```
+
+
+### pushing to github repo 
+
+```
+ ls
+Dockerfile  README.md  html-sample-app
+learntechbyme@gcp-common-vm:~/my-codes/ashu-vodafone-webapp$ 
+learntechbyme@gcp-common-vm:~/my-codes/ashu-vodafone-webapp$ 
+learntechbyme@gcp-common-vm:~/my-codes/ashu-vodafone-webapp$ git add  .
+warning: adding embedded git repository: html-sample-app
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint: 
+hint:   git submodule add <url> html-sample-app
+hint: 
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint: 
+hint:   git rm --cached html-sample-app
+hint: 
+hint: See "git help submodule" for more information.
+learntechbyme@gcp-common-vm:~/my-codes/ashu-vodafone-webapp$ git commit  -m "updates"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <learntechbyme@gcp-common-vm.asia-south1-c.c.vodafone-devsecops.internal>) not allowed
+
+learntechbyme@gcp-common-vm:~/my-codes/ashu-vodafone-webapp$ git config --global user.email ashutoshh@linux.com
+learntechbyme@gcp-common-vm:~/my-codes/ashu-vodafone-webapp$ git config --global user.name  redashu
+learntechbyme@gcp-common-vm:~/my-codes/ashu-vodafone-webapp$ 
+learntechbyme@gcp-common-vm:~/my-codes/ashu-vodafone-webapp$ git add  .
+learntechbyme@gcp-common-vm:~/my-codes/ashu-vodafone-webapp$ git commit  -m "updates"
+[master b4bffea] updates
+ 3 files changed, 6 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 Dockerfile
+ create mode 160000 html-sample-app
+learntechbyme@gcp-common-vm:~/my-codes/ashu-vodafone-webapp$ git push 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 448 bytes | 448.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:redashu/ashu-vodafone-webapp.git
+   cbb46db..b4bffea  master -> master
+
+```
