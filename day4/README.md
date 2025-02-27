@@ -107,3 +107,11 @@ learntechbyme@common-vm:~/ashu-vodafone-webapp$
   105  trivy  image  --severity HIGH  ashu:app1  
   106  trivy  image  --severity HIGH,CRITICAL  ashu:app1  
 ```
+
+### few k8s components 
+
+<img src="compo1.png">
+
+### setup k8s in General 
+
+<img src="k8s2.png">
