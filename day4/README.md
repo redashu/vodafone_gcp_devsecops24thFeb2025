@@ -1,10 +1,10 @@
-# vodafone_gcp_devsecops24thFeb2025
+### Revision 
 
-## Training Timings 
+### Development to Deployment 
 
-<img src="time.png">
+<img src="dev1.png">
 
-## Lab Environment 
+### CodeBuild option there 
 
-<img src="lab1.png">
+<img src="cb1.png">
 
