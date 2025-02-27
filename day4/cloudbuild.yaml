@@ -3,4 +3,4 @@ options:
 steps:
   # using code build internal command to build image
   - name: 'gcr.io/cloud-builders/docker'
-      args: ['build', '-t', 'ashuwebapp:v1', '.']
+    args: ['build', '-t', 'ashuwebapp:v1', '.']
