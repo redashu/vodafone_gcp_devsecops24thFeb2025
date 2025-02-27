@@ -43,3 +43,57 @@ learntechbyme@common-vm:~/ashu-vodafone-webapp$
 
 <img src="tool1.png">
 
+### Understanding security context in Devops lifecycle 
+
+<img src="sec1.png">
+
+### Understanding SAST thing
+
+<img src="sast.png">
+
+### Some SAST tools 
+
+<img src="sast1.png">
+
+### TRrivy can scan below things for given targets
+
+<img src="trivy1.png">
+
+
+
+### trivy commands 
+
+### scanning webapp source code 
+
+```
+trivy  fs  ./web-app/
+2025-02-27T07:50:33Z    INFO    [vulndb] Need to update DB
+2025-02-27T07:50:33Z    INFO    [vulndb] Downloading vulnerability DB...
+2025-02-27T07:50:33Z    INFO    [vulndb] Downloading artifact...        repo="mirror.gcr.io/aquasec/trivy-db:2"
+60.06 MiB / 60.06 MiB [------------------------------------------------------------------------] 100.00% 16.98 MiB p/s 3.7s
+2025-02-27T07:50:38Z    INFO    [vulndb] Artifact successfully downloaded       repo="mirror.gcr.io/aquasec/trivy-db:2"
+2025-02-27T07:50:38Z    INFO    [vuln] Vulnerability scanning is enabled
+2025-02-27T07:50:38Z    INFO    [secret] Secret scanning is enabled
+2025-02-27T07:50:38Z    INFO    [secret] If your scanning is slow, please try '--scanners vuln' to disable secret scanning
+2025-02-27T07:50:38Z    INFO    [secret] Please see also https://aquasecurity.github.io/trivy/v0.59/docs/scanner/secret#recommendation for faster secret detection
+2025-02-27T07:50:38Z    INFO    Number of language-specific files       num=0
+learntechbyme@common-vm:~/ashu-vodafone-webapp$ 
+learntechbyme@common-vm:~/ashu-vodafone-webapp$ 
+learntechbyme@common-vm:~/ashu-vodafone-webapp$ 
+
+```
+
+### some more commands 
+
+```
+   90  ls
+   91  trivy 
+   92  trivy  repo https://github.com/redashu/vodafone_gcp_devsecops24thFeb2025.git
+   93  ls
+   94  trivy  image  python:3.4-alpine 
+   95  history 
+   96  trivy  image  gcr.io/cloud-builders/docker
+   97  history 
+
+   ```
+   
