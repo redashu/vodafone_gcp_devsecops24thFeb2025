@@ -96,4 +96,14 @@ learntechbyme@common-vm:~/ashu-vodafone-webapp$
    97  history 
 
    ```
-   
+
+   ### More trivy commands 
+
+   ```
+     101  trivy  image ashu:app1  >result.txt
+  102  cat result.txt 
+  103  history 
+  104  trivy --help
+  105  trivy  image  --severity HIGH  ashu:app1  
+  106  trivy  image  --severity HIGH,CRITICAL  ashu:app1  
+```
