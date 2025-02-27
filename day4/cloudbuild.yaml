@@ -22,3 +22,12 @@ steps:
   # step 5  app running status by loging into same container and doing curl 
   - name: 'gcr.io/cloud-builders/docker'
     args: ['exec','ashuc11','curl','-f','http://localhost/health.html']
+
+  # step 6 push this image into google artifacts
+  # changing image name as per google artifacts 
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['tag', 'ashuwebapp:v1', 'asia-docker.pkg.dev/vodafone-devsecops/vodafone-webapp-images/ashuwebapp:v1']
+  # Step 7 to push image 
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'asia-docker.pkg.dev/vodafone-devsecops/vodafone-webapp-images/ashuwebapp:v1']
+   
