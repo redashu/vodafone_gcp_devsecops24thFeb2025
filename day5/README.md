@@ -129,3 +129,70 @@ learntechbyme@cloudshell:~ (vodafone-devsecops)$
 
 ```
 
+## always created pod using controllers not direct 
+
+<img src="cont1.png">
+
+
+### cleaning up the pods
+
+```
+kubectl delete pods --all
+pod "anantha" deleted
+pod "aniketpod" deleted
+pod "anujpod1" deleted
+pod "ashupod1" deleted
+pod "pradippod1" deleted
+
+```
+
+### creating pods using deployment controller 
+
+```
+ kubectl   create  deployment  ashu-app-deploy  --image  nginx  --port 80   --dry-run=client -o yaml 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: ashu-app-deploy
+  name: ashu-app-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ashu-app-deploy
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: ashu-app-deploy
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
+learntechbyme@cloudshell:~ (vodafone-devsecops)$ kubectl   create  deployment  ashu-app-deploy  --image  nginx  --port 80   --dry-run=client -o yaml  >deploy.yaml 
+learntechbyme@cloudshell:~ (vodafone-devsecops)$ 
+
+
+```
+
+### deploy pod with yaml file using deployment 
+
+```
+ kubectl  create  -f  deploy.yaml 
+deployment.apps/ashu-app-deploy created
+learntechbyme@cloudshell:~ (vodafone-devsecops)$ kubectl get deploy 
+NAME              READY   UP-TO-DATE   AVAILABLE   AGE
+ashu-app-deploy   1/1     1            1           8s
+learntechbyme@cloudshell:~ (vodafone-devsecops)$ kubectl get pod
+NAME                               READY   STATUS    RESTARTS   AGE
+ashu-app-deploy-64d7596cbc-vprs8   1/1     Running   0          19s
+learntechbyme@cloudshell:~ (vodafone-devsecops)$ 
+
+```
