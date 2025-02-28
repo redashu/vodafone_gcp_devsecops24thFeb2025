@@ -318,3 +318,46 @@ Either you have not created any objects yet or the existing objects were already
 Destroy complete! Resources: 0 destroyed.
 learntechbyme@cloudshell:~/ashu-terraform$ 
 ```
+
+### DAST is possible when we are exposing our app to be accessible range 
+
+<img src="acc1.png">
+
+### k8s based pod apss can be exposed using LB which can be created by service controller
+
+<img src="svc123.png">
+
+### Creating loadbalancer type service 
+
+```
+ kubectl expose deployment aniket-app-deploy  --type LoadBalancer  --port 80 --dry-run=client -o yaml >anksvc.yaml 
+  239  cat anksvc.yaml 
+  240  history 
+learntechbyme@cloudshell:~ (vodafone-devsecops)$ kubectl create -f anksvc.yaml 
+service/aniket-app-deploy created
+learntechbyme@cloudshell:~ (vodafone-devsecops)$ kubectl get  service 
+NAME                TYPE           CLUSTER-IP       EXTERNAL-IP    PORT(S)        AGE
+aniket-app-deploy   LoadBalancer   34.118.234.111   <pending>      80:31459/TCP   7s
+ashu-app-deploy     LoadBalancer   34.118.236.71    34.66.64.221   80:30950/TCP   51m
+kubernetes          ClusterIP      34.118.224.1     <none>         443/TCP        7h32m
+learntechbyme@cloudshell:~ (vodafone-devsecops)$ kubectl get  service 
+NAME                TYPE           CLUSTER-IP       EXTERNAL-IP    PORT(S)        AGE
+aniket-app-deploy   LoadBalancer   34.118.234.111   <pending>      80:31459/TCP   25s
+ashu-app-deploy     LoadBalancer   34.118.236.71    34.66.64.221   80:30950/TCP   52m
+kubernetes          ClusterIP      34.118.224.1     <none>         443/TCP        7h32m
+learntechbyme@cloudshell:~ (vodafone-devsecops)$ kubectl get  deploy
+NAME                 READY   UP-TO-DATE   AVAILABLE   AGE
+aniket-app-deploy    2/2     2            2           3h43m
+ashu-app-deploy      1/1     1            1           3h45m
+pradip-app-deploy    1/1     1            1           3h45m
+sohl-app-deploy      1/1     1            1           3h47m
+somning-app-deploy   1/1     1            1           3h45m
+learntechbyme@cloudshell:~ (vodafone-devsecops)$ 
+
+```
+
+### scanning any realtime webapp
+
+```
+docker run -t zaproxy/zap-weekly zap-baseline.py -t  http://34.66.64.221/ 
+```

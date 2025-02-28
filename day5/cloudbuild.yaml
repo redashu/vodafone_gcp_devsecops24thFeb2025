@@ -33,7 +33,19 @@ steps:
    
   # step 8  Deploy sample nginx container on GKE 
   - name: 'gcr.io/cloud-builders/kubectl'
-    args: ['get','nodes']
+    args: 
+      - apply 
+      - -f
+      - ashu-web-deploy.yaml 
     env: # passing k8s info 
       - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
       - 'CLOUDSDK_CONTAINER_CLUSTER=my-first-cluster-1'
+  # step 9  Deploy check 
+  - name: 'gcr.io/cloud-builders/kubectl'
+    args: 
+      - get  
+      - deploy,pods
+    env: # passing k8s info 
+      - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
+      - 'CLOUDSDK_CONTAINER_CLUSTER=my-first-cluster-1'
+  
