@@ -84,3 +84,48 @@ serverVersion:
   goVersion: go1.22.10 X:boringcrypto
 
 ```
+
+## Few kubectl commands 
+
+### Getting nodes detail 
+
+```
+ kubectl   get  nodes
+NAME                                                STATUS   ROLES    AGE    VERSION
+gke-my-first-cluster-1-default-pool-91a71bd3-j52c   Ready    <none>   110m   v1.29.13-gke.1169000
+gke-my-first-cluster-1-default-pool-91a71bd3-w30p   Ready    <none>   110m   v1.29.13-gke.1169000
+gke-my-first-cluster-1-default-pool-91a71bd3-wfzk   Ready    <none>   110m   v1.29.13-gke.1169000
+learntechbyme@cloudshell:~ (vodafone-devsecops)$ 
+
+```
+
+### POd as basic unit in k8s -- to deploy any container image
+
+<img src="pod1.png">
+
+### creating first pod 
+
+```
+learntechbyme@cloudshell:~ (vodafone-devsecops)$ kubectl  get  pods
+No resources found in default namespace.
+learntechbyme@cloudshell:~ (vodafone-devsecops)$ 
+learntechbyme@cloudshell:~ (vodafone-devsecops)$ 
+learntechbyme@cloudshell:~ (vodafone-devsecops)$ kubectl  run  ashupod1  --image  nginx  
+pod/ashupod1 created
+learntechbyme@cloudshell:~ (vodafone-devsecops)$ kubectl   get  nodes
+NAME                                                STATUS   ROLES    AGE    VERSION
+gke-my-first-cluster-1-default-pool-91a71bd3-j52c   Ready    <none>   124m   v1.29.13-gke.1169000
+gke-my-first-cluster-1-default-pool-91a71bd3-w30p   Ready    <none>   124m   v1.29.13-gke.1169000
+gke-my-first-cluster-1-default-pool-91a71bd3-wfzk   Ready    <none>   124m   v1.29.13-gke.1169000
+learntechbyme@cloudshell:~ (vodafone-devsecops)$ 
+learntechbyme@cloudshell:~ (vodafone-devsecops)$ 
+learntechbyme@cloudshell:~ (vodafone-devsecops)$ kubectl  get  pods
+NAME       READY   STATUS    RESTARTS   AGE
+ashupod1   1/1     Running   0          48s
+learntechbyme@cloudshell:~ (vodafone-devsecops)$ kubectl  get  pods -o wide
+NAME       READY   STATUS    RESTARTS   AGE   IP          NODE                                                NOMINATED NODE   READINESS GATES
+ashupod1   1/1     Running   0          58s   10.48.0.6   gke-my-first-cluster-1-default-pool-91a71bd3-w30p   <none>           <none>
+learntechbyme@cloudshell:~ (vodafone-devsecops)$ 
+
+```
+
