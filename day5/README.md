@@ -245,3 +245,76 @@ sohl-app-deploy      2/2     2            2           11m
 
 <img src="tools.png">
 
+### IAC for NON K8s infra for any Cloud -- Terraform 
+
+<img src="tf1.png">
+
+### Terraform tool as INfra provisinoer 
+
+<img src="tf2.png">
+
+### checking terraform version 
+
+```
+ terraform  version 
+Terraform v1.5.7
+on linux_amd64
+
+Your version of Terraform is out of date! The latest version
+is v1.11.0. You can update by downloading from https://www.terraform.io/downloads.html
+learntechbyme@cloudshell:~ (vodafone-devsecops)$ 
+
+```
+
+### More info about HashiCorp Terraform 
+
+<img src="hcl1.png">
+
+### Creating Infra 
+
+<img src="tf4.png">
+
+### INit 
+
+```
+terraform init 
+
+Initializing the backend...
+
+Initializing provider plugins...
+- Finding latest version of hashicorp/google...
+- Installing hashicorp/google v6.23.0...
+- Installed hashicorp/google v6.23.0 (signed by HashiCorp)
+
+Terraform has created a lock file .terraform.lock.hcl to record the provider
+selections it made above. Include this file in your version control repository
+so that Terraform can guarantee to make the same selections by defaul
+
+```
+
+### Plan --apply -- > Destroy 
+
+```
+learntechbyme@cloudshell:~/ashu-terraform$ terraform init  ^C
+learntechbyme@cloudshell:~/ashu-terraform$ terraform plan 
+
+No changes. Your infrastructure matches the configuration.
+
+Terraform has compared your real infrastructure against your configuration and found no differences, so no changes are needed.
+learntechbyme@cloudshell:~/ashu-terraform$ terraform  apply 
+
+No changes. Your infrastructure matches the configuration.
+
+Terraform has compared your real infrastructure against your configuration and found no differences, so no changes are needed.
+
+Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
+learntechbyme@cloudshell:~/ashu-terraform$ 
+learntechbyme@cloudshell:~/ashu-terraform$ terraform  destroy 
+
+No changes. No objects need to be destroyed.
+
+Either you have not created any objects yet or the existing objects were already deleted outside of Terraform.
+
+Destroy complete! Resources: 0 destroyed.
+learntechbyme@cloudshell:~/ashu-terraform$ 
+```

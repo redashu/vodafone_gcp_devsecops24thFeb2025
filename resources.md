@@ -32,3 +32,11 @@
 [click_here](https://github.com/aquasecurity/trivy)
 
 
+### HashiCorp terraform 
+
+[click_here](https://developer.hashicorp.com/terraform?product_intent=terraform)
+
+### Terraform provider info 
+
+[click](https://registry.terraform.io/browse/providers)
+
