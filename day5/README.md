@@ -196,3 +196,47 @@ ashu-app-deploy-64d7596cbc-vprs8   1/1     Running   0          19s
 learntechbyme@cloudshell:~ (vodafone-devsecops)$ 
 
 ```
+
+### scaling pod horizontally using yaml file update
+
+```
+kubectl apply   -f deploy.yaml 
+Warning: resource deployments/ashu-app-deploy is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by kubectl apply. kubectl apply should only be used on resources created declaratively by either kubectl create --save-config or kubectl apply. The missing annotation will be patched automatically.
+deployment.apps/ashu-app-deploy configured
+learntechbyme@cloudshell:~ (vodafone-devsecops)$ 
+learntechbyme@cloudshell:~ (vodafone-devsecops)$ kubectl get  deploy
+NAME                 READY   UP-TO-DATE   AVAILABLE   AGE
+anantha-app-deploy   1/1     1            1           4m21s
+aniket-app-deploy    1/1     1            1           4m30s
+anuj-app-deploy      1/1     1            1           87s
+ashu-app-deploy      2/2     2            2           10m
+pradip-app-deploy    1/1     1            1           6m34s
+sohl-app-deploy      1/1     1            1           5m40s
+somning-app-deploy   1/1     1            1           7m39s
+learntechbyme@cloudshell:~ (vodafone-devsecops)$ kubectl get po
+NAME                                  READY   STATUS    RESTARTS   AGE
+anantha-app-deploy-55fd69f5c9-pgzg9   1/1     Running   0          2m26s
+aniket-app-deploy-55c5f8cf58-64kj8    1/1     Running   0          4m43s
+anuj-app-deploy-6d8fc6fd9b-bnnbd      1/1     Running   0          100s
+ashu-app-deploy-64d7596cbc-fk7d2      1/1     Running   0          17s
+ashu-app-deploy-64d7596cbc-hd2tb      1/1     Running   0          2m25s
+pradip-app-deploy-69f68596f8-g7pb2    1/1     Running   0          6m47s
+sohl-app-deploy-59b5dbfbb6-fmq2v      1/1     Running   0          5m53s
+
+```
+
+### cleanup of deployment 
+
+```
+       11m
+learntechbyme@cloudshell:~ (vodafone-devsecops)$ kubectl delete -f deploy.yaml 
+deployment.apps "ashu-app-deploy" deleted
+learntechbyme@cloudshell:~ (vodafone-devsecops)$ kubectl get  deploy                                                                                                               
+NAME                 READY   UP-TO-DATE   AVAILABLE   AGE
+anantha-app-deploy   3/3     3            3           10m
+aniket-app-deploy    1/1     1            1           10m
+anuj-app-deploy      1/1     1            1           7m14s
+pradip-app-deploy    2/2     2            2           12m
+sohl-app-deploy      2/2     2            2           11m
+
+```
