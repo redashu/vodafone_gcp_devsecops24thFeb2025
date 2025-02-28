@@ -30,4 +30,8 @@ steps:
   # Step 7 to push image 
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'asia-docker.pkg.dev/vodafone-devsecops/vodafone-webapp-images/ashuwebapp:v1']
-   
+   # add DAST step here
+  # Step 8
+  # do DAST in build container image with OWASP ZAP
+  - name: 'owasp/zap2docker-stable'
+    args: ['zap-baseline.py', '-t', 'http://localhost:1234/health.html', '-g', 'report.html']
