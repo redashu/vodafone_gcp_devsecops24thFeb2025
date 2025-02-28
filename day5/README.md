@@ -49,6 +49,13 @@ docker-compose build
 
 <img src="k8s2.png">
 
+### To get GKE control plane credentials from gcloud shell
+
+```
+gcloud container clusters get-credentials my-first-cluster-1 --zone us-central1-c --project vodafone-devsecops 
+
+```
+
 ### connection verification 
 
 ```
